@@ -3,7 +3,7 @@ package ProjectManagement;
 
 public class Project {
 	String name;
-	int priority,budget,time;
+	int priority,budget;
 
 	public Project(String name,int priority,int budget){
 		this.name=name;

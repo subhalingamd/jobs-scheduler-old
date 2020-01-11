@@ -99,7 +99,16 @@ public class Scheduler_Driver extends Thread implements SchedulerInterface {
     @Override
     public void run() {
         // till there are JOBS
-        schedule();
+        // schedule();
+
+        while (!allJobs.isEmpty()){
+            synchronized (allJobs){
+                    schedule();
+                    System.out.println("System execution completed");
+            }
+        }
+
+
     }
 
 
@@ -253,7 +262,7 @@ public class Scheduler_Driver extends Thread implements SchedulerInterface {
                 return;
             }
             System.out.println("Un-sufficient budget.");
-            expensiveJobsUpd.insert(jobIn.toString(),currJob);
+ //           expensiveJobsUpd.insert(jobIn.toString(),currJob);
             expensiveJobs.add(currJob);
         }
 

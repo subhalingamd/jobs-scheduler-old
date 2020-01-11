@@ -119,7 +119,7 @@ public class Trie<T> implements TrieInterface {
             x++;
         }while (t2.size()>0 && x<=level);
 
-        if (x<level){
+        if (x<=level){
             System.out.println("NOT FOUND");
             return;
         }
@@ -147,7 +147,7 @@ public class Trie<T> implements TrieInterface {
             System.out.print("Level "+x+": ");
             t1=t2;
             t2=new ArrayList();
-            for (int j=0;j<95;j++){
+            for (int j=0;j<95;j++){ //j=1 directly?
             //    boolean flag=true;
               for (int i=0;i<t1.size();i++){
                 
